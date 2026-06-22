@@ -42,3 +42,6 @@ vectorstore/
 *.log
 tmp/
 temp/
+
+#documents
+modeloptions.md

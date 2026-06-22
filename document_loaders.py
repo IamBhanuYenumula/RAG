@@ -2,6 +2,7 @@ import os
 import tempfile
 from pathlib import Path
 from langchain_core.documents import Document
+import pypdf
 
 def load_text_file():
     with tempfile.NamedTemporaryFile(delete=False, suffix=".txt") as temp_file:
@@ -21,5 +22,21 @@ def load_text_file():
     finally:
         os.remove(temp_file_path)
 
+def pdf_loader(pdf_path: str):
+    with open(pdf_path, "rb") as f:
+        reader = pypdf.PdfReader(f)
+        documents = [
+            Document(
+                page_content=page.extract_text() or "",
+                metadata={"source": pdf_path, "page": i},
+            )
+            for i, page in enumerate(reader.pages)
+        ]
+
+    print(f"Loaded {len(documents)} document(s) from PDF")
+    for i, doc in enumerate(documents):
+        print(f"Document {i+1} Content Preview: {doc.page_content[:20]}")
+        print(f"Metadata: {doc.metadata}")
 if __name__ == "__main__":
-    load_text_file()
+    # load_text_file()
+    pdf_loader("./docs/DW.pdf")

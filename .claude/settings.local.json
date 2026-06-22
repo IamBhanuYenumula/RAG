@@ -2,7 +2,22 @@
   "permissions": {
     "allow": [
       "Bash(uv run *)",
-      "Bash(uv pip *)"
+      "Bash(uv pip *)",
+      "Bash(uv init *)",
+      "Bash(uv add *)",
+      "WebSearch",
+      "WebFetch(domain:python.langchain.com)",
+      "WebFetch(domain:docs.langchain.com)",
+      "WebFetch(domain:api.python.langchain.com)",
+      "WebFetch(domain:reference.langchain.com)",
+      "WebFetch(domain:github.com)",
+      "Bash(pip show *)",
+      "WebFetch(domain:pypi.org)",
+      "Bash(pip index *)",
+      "Bash(python3 -c \"from langchain_community.document_loaders import PyPDFLoader; import warnings; warnings.simplefilter\\('always'\\); loader = PyPDFLoader.__doc__; print\\(loader\\)\")",
+      "Bash(python3 -c \"import langchain_community; print\\(langchain_community.__version__\\)\")",
+      "Bash(gh issue *)",
+      "Skill(run)"
     ]
   }
 }
