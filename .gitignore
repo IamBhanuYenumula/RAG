@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg
+*.egg-info/
+dist/
+build/
+*.whl
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Environment variables (API keys — never commit these)
+.env
+.env.*
+!.env.example
+
+# Vector stores & embeddings (can be large and are reproducible)
+chroma_db/
+faiss_index/
+vectorstore/
+*.faiss
+*.pkl
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# macOS
+.DS_Store
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+
+# Logs & temp files
+*.log
+tmp/
+temp/
